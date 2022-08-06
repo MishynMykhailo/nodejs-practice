@@ -1,0 +1,27 @@
+{
+  "name": "nodejs-practice",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "cross-env node server.js",
+    "dev": "cross-env NODE_ENV=development nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MishynMykhailo/nodejs-practice.git"
+  },
+  "keywords": [],
+  "author": "Mishyn Mykhailo <misham18092001@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MishynMykhailo/nodejs-practice/issues"
+  },
+  "homepage": "https://github.com/MishynMykhailo/nodejs-practice#readme",
+  "dependencies": {
+    "colors": "^1.4.0",
+    "cross-env": "^7.0.3",
+    "nodemon": "^2.0.19"
+  }
+}
