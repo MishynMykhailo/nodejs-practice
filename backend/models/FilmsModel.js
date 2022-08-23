@@ -1,9 +1,3 @@
-// {
-//     "title",
-//     "year",
-//     "rating",
-// }
-
 const { model, Schema } = require("mongoose");
 
 const filmSchema = Schema(
