@@ -14,6 +14,7 @@ dotenv.config({ path: path.join(__dirname, "..", "config", ".env") });
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use("/api/v1", require("./routes/filmsRoutes"));
+app.use("/users", require("./routes/usersRoutes"));
 app.use(require("./middlewares/badUrlError"));
 app.use(require("./middlewares/errorHandler"));
 const { PORT } = process.env;

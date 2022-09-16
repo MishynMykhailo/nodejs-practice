@@ -1,5 +1,24 @@
+const { model, Schema } = require("mongoose");
+const userSchema = Schema(
+  {
+    userName: {
+      type: String,
+      default: "John Doe",
+    },
+    userEmail: {
+      type: String,
+      required: [true, "Mongoose: User email is required!"],
+    },
+    userPassword: {
+      type: String,
+      required: [true, "Mongoose: User password is required!"],
+    },
+  },
+  { timestamps: true, versionKey: false }
+);
+module.exports = model("user", userSchema);
 // {
-//     "userName",
-//     "userEmail",
-//     "userPassword"
+//   "userName": "John Doe",
+//   "userEmail": "JohnDoe@gmail.com",
+//   "userPassword": "123456"
 // }

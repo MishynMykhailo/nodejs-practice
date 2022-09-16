@@ -9,12 +9,16 @@ router.post(
   },
   FilmsController.add
 );
-router.get("/films", FilmsController.getAll);
-router.get("/films/:id", FilmsController.getById);
-router.patch("/films/:id", FilmsController.update);
-router.delete("/films/:id", FilmsController.remove);
 // getAll
+router.get("/films", FilmsController.getAll);
+
 // getOne
+router.get("/films/:id", FilmsController.getById);
+
 // update
+router.patch("/films/:id", FilmsController.update);
+
 // remove
+router.delete("/films/:id", FilmsController.remove);
+
 module.exports = router;
