@@ -1,5 +1,7 @@
 const router = require("express").Router();
-const UsersController = require("../controllers/UsersControllers");
+const usersController = require("../controllers/usersControllers");
+const authMiddleware = require("../middlewares/authMiddleware");
+
 // /registration: save new  user in to db
 router.post(
   "/register",
@@ -7,7 +9,7 @@ router.post(
     console.log("Joi work");
     next();
   },
-  UsersController.register
+  usersController.register
 );
 
 // authorization: перевірка прав доступу
@@ -17,13 +19,13 @@ router.post(
     console.log("Joi work");
     next();
   },
-  UsersController.login
+  usersController.login
 );
 
 // logout: видалення прав доступу
-router.get("/logout", UsersController.logout);
+router.get("/logout", authMiddleware, usersController.logout);
 
-router.get("/info", UsersController.info);
+router.get("/info", authMiddleware, usersController.info);
 // authefication перевірка даних користувача з тим що у нас в дб
 
 module.exports = router;

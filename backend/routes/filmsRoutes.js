@@ -1,24 +1,28 @@
 const router = require("express").Router();
-const FilmsController = require("../controllers/FilmsControllers");
-
+const filmsController = require("../controllers/filmsControllers");
+const roleMiddleware = require("../middlewares/roleMiddleware");
 // add
 router.post(
   "/films",
   (req, res, next) => {
     console.log("сработал JOI"), next();
   },
-  FilmsController.add
+  filmsController.add
 );
 // getAll
-router.get("/films", FilmsController.getAll);
+router.get("/films", roleMiddleware(["ADMIN"]), filmsController.getAll);
 
 // getOne
-router.get("/films/:id", FilmsController.getById);
+router.get(
+  "/films/:id",
+  roleMiddleware(["ADMIN", "USER"]),
+  filmsController.getById
+);
 
 // update
-router.patch("/films/:id", FilmsController.update);
+router.patch("/films/:id", roleMiddleware(["ADMIN"]), filmsController.update);
 
 // remove
-router.delete("/films/:id", FilmsController.remove);
+router.delete("/films/:id", roleMiddleware(["ADMIN"]), filmsController.remove);
 
 module.exports = router;

@@ -13,6 +13,10 @@ const userSchema = Schema(
       type: String,
       required: [true, "Mongoose: User password is required!"],
     },
+    token: {
+      type: String,
+    },
+    roles: [{ type: String, ref: "role" }],
   },
   { timestamps: true, versionKey: false }
 );

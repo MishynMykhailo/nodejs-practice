@@ -1,5 +1,5 @@
 const asyncHandler = require("express-async-handler");
-const Films = require("../models/FilmsModel");
+const Films = require("../models/filmsModel");
 
 class FilmsController {
   // add
@@ -18,12 +18,12 @@ class FilmsController {
 
   // getAll
   getAll = asyncHandler(async (req, res) => {
-    console.log("getAll");
     const films = await Films.find({});
     if (!films) {
       res.status(400);
       throw Error("Not result");
     }
+    res.status(200).json({ code: 200, data: { films } });
   });
 
   // getOne
