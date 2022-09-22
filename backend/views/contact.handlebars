@@ -1,32 +1,33 @@
-    <form>
-      <div class="row">
-        <div class="six columns">
-          <label for="EmailInput">Your email</label>
-          <input
-            name="userName"
-            class="u-full-width"
-            type="email"
-            placeholder="test@mailbox.com"
-            id="EmailInput"
-          />
-        </div>
-        <div class="six columns">
-          <label for="UserNameInput">Your username</label>
-          <input
-            name="userEmail"
-            class="u-full-width"
-            type="text"
-            placeholder="kotik111"
-            id="UserNameInput"
-          />
-        </div>
-      </div>
-      <label for="exampleMessage">Message</label>
-      <textarea
-        name="userMessage"
+<h1>{{msg}}</h1>
+<form method="post" action="send">
+  <div class="row">
+    <div class="six columns">
+      <label for="EmailInput">Your email</label>
+      <input
+        name="userEmail"
         class="u-full-width"
-        placeholder="Hi Dave …"
-        id="exampleMessage"
-      ></textarea>
-      <input class="button-primary" type="submit" value="Submit" />
-    </form>
+        type="email"
+        placeholder="test@mailbox.com"
+        id="EmailInput"
+      />
+    </div>
+    <div class="six columns">
+      <label for="UserNameInput">Your username</label>
+      <input
+        name="userName"
+        class="u-full-width"
+        type="text"
+        placeholder="kotik111"
+        id="UserNameInput"
+      />
+    </div>
+  </div>
+  <label for="exampleMessage">Message</label>
+  <textarea
+    name="userMessage"
+    class="u-full-width"
+    placeholder="Hi Dave …"
+    id="exampleMessage"
+  ></textarea>
+  <input class="button-primary" type="submit" value="Submit" />
+</form>
