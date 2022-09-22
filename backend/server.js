@@ -11,6 +11,7 @@ app.use(cors());
 require("cross-env");
 dotenv.config({ path: path.join(__dirname, "..", "config", ".env") });
 
+app.use(express.static("public"));
 // set template engine
 app.engine("handlebars", engine());
 app.set("view engine", "handlebars");
@@ -18,6 +19,10 @@ app.set("views", "./backend/views");
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
+
+app.get("/home", (req, res, next) => {
+  res.render("home");
+});
 
 app.get("/contact", (req, res, next) => {
   res.render("contact");
